@@ -38,8 +38,15 @@ python3 run_memory_workflow_pcd.py
 ```
 
 ## Configuration
-WIP
+We mainly have three config files, `MA_config.yaml`, `config.yaml` and `workflow.yaml`. 
+`MA_config.yaml` is for Macthing+Segment.
+`config.yaml` is for grasp pose generation, including some camera settings, i.e., extrinsic parameters.
+`workflow.yaml` is for workflow settings, you will see there are some duplicate parameters which appear in the above two files, Note that only `method` and `fx`, `fy`, `cx` and `cy` will affect.
+
+In the future, we can make it all in one.
+
 
 ## TODO
 - mechanism for mult-target matching.
 - collision-free grasping filter
+- mask all configs in one.
