@@ -11,7 +11,7 @@ Environment: Tested under python3.10.12 && torch==2.4.1+cuda12.4
 Firstly, create the environment using virtual-env.
 ```
 python3 -m venv venv
-source venv/bin/activiate
+source venv/bin/activate
 ```
 Then install all dependencies and download the models, directly execute the install.sh.
 ```
