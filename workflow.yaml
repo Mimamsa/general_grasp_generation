@@ -1,0 +1,16 @@
+method: "match" # ["match", "dust3r"]
+template_img: ./Example/inputs/template/ele # [Match] matching object 的template，可包含多張
+fat_mask: 50  # [Match] segment 後的遮罩經過多大pixel捲機的擴大，融入背景資訊看能否幫助grasp pose
+matching_thresh: 0.5 # [Match] 按照原論文設定的一個threshold, 用來對最後的matching score做一個篩選, 可能要按照經驗做微調
+eval_width: 0.06 # [Grasp]機器手臂夾爪寬度
+all_points_num: 25600 # [Grasp]點雲sample的point數量
+table_height: 0 # [Grasp]會把高度低於該值得grasp pose篩掉
+bounds: [-1, 1, -1, 1] # [Grasp] work space會把超出該範圍的grasp 篩掉
+z_rescale: 1.2 # [Grasp] 把z軸的差距拉大，原本預設1.2，但在夾線圈這種z軸變化不大物品，調大會有更好效果
+fx: 366.454
+fy: 366.530
+cx: 316.605
+cy: 241.725
+camera_transform: # [Grasp] 相機外參，需要準確提供，目前沒有所以全通靈
+  euler_deg: [-120, 0.0, 180.0]  # XYZ 歐拉角
+  translation: [0.0, 0.0, 0.5]   # T_x, T_y, T_z

@@ -1,0 +1,19 @@
+omegaconf
+ruamel.yaml
+hydra-colorlog
+hydra-core
+gdown
+pandas
+imageio
+pyrender
+pytorch-lightning==1.8.1
+pycocotools 
+distinctipy
+ultralytics==8.0.135  # FastSAM
+PEM
+timm
+gorilla-core==0.2.7.8
+trimesh==4.0.8
+gpustat==1.0.0
+imgaug
+einops
