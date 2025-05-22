@@ -1,7 +1,10 @@
 # general_grasp_generation
 This is the integration version combined https://github.com/haha20331/Match-Anything and https://github.com/haha20331/REGNetv2
 Using SAM6D as the object recognition and segmentation modules for cropping the ROI point-cloud, REGDv2 as the grasping generation module given the point-cloud.
-We also support using only point-cloud as input to generate the grasping pose.
+The workflow supports giving the rgb+depth images as input to generating the grasping pose, using only point-cloud as input is supported as well.
+![system diagram](system.png)
+
+
 
 ## Installation
 Environment: Tested under python3.10.12 && torch==2.4.1+cuda12.4
