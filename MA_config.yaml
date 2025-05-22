@@ -1,9 +1,9 @@
 segmentor_model: fastsam # 使用sam或是fastsam做分割
-rgb_path: /media/mingjay/新增磁碟區/projects/general_grasp_pose_generation/Match-Anything/SAM-6D/SAM-6D/Instance_Segmentation_Model/Example/inputs/target_img/ele_on_table.jpg # 目標場景的rgb圖
-template_img: /media/mingjay/新增磁碟區/projects/general_grasp_pose_generation/MatchAnything/SAM6D/SAM6D/Instance_Segmentation_Model/Example/inputs/template/ele # matching object 的template，可包含多張
+rgb_path: ./Example/inputs/target_img/ele_on_table.jpg # 目標場景的rgb圖
+template_img: ./Example/inputs/template/ele # matching object 的template，可包含多張
 output_dir: /media/mingjay/新增磁碟區/projects/general_grasp_pose_generation/Match-Anything/SAM-6D/SAM-6D/Instance_Segmentation_Model/Example/outputs # output path
 exp_name: rgbd_ele # 實驗名稱，會作為資料夾名稱放在output_dir底下
 stability_score_thresh: 0.97 # 不知道幹啥的參數，反正只有sam用到，fastsam沒用到
 fat_mask: 50  # segment 後的遮罩經過多大pixel捲機的擴大，融入背景資訊看能否幫助grasp pose
-matching_thresh: 0.5 # 按照原論文設定的一個threshold, 用來對最後的matching score做一個篩選, 可能要按照經驗做微調
+matching_thresh: 0.1 # 按照原論文設定的一個threshold, 用來對最後的matching score做一個篩選, 可能要按照經驗做微調
 # python match_anything.py --config MA_config.yaml

@@ -15,11 +15,11 @@ if __name__ == "__main__":
     gd_config = load_GD_config()
     workflow_config = load_workflow_config()
 
-    rgb_path = "Example/inputs/rgbd/2/color.png"
+    rgb_path = "Example/inputs/rgbd/4/color.png"
     rgb = Image.open(rgb_path).convert("RGB")
     rgb = np.array(rgb)
 
-    depth_path = "Example/inputs/rgbd/2/depth.png"
+    depth_path = "Example/inputs/rgbd/4/depth.png"
     depth = cv2.imread(depth_path, cv2.IMREAD_UNCHANGED)
 
     workflow = EfficiencyWorkflow(ma_config, gd_config, workflow_config)

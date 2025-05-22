@@ -18,7 +18,7 @@ table_height: 0 # 會把高度低於該值得grasp pose篩掉
 bounds: [-1, 1, -1, 1] # =work space會把超出該範圍的grasp 篩掉
 z_rescale: 1.2 # 把z軸的差距拉大，原本預設1.2，但在夾線圈這種z軸變化不大物品，調大會有更好效果
 camera_transform: # 相機外參，需要準確提供，目前沒有所以全通靈
-  euler_deg: [-120, 0.0, 180.0]  # XYZ 歐拉角
+  euler_deg: [-140, 0.0, 180.0]  # XYZ 歐拉角
   translation: [0.0, 0.0, 0.5]   # T_x, T_y, T_z
   # mike 超參
   # euler_deg: [-160, 0.0, 180.0]  # XYZ 歐拉角

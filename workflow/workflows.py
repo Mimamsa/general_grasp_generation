@@ -69,11 +69,11 @@ class EfficiencyWorkflow(WorkflowBase):
             raise Exception("Must provide pcd when method is 'dust3r'.")
         
         if self.method == "match":
-            queries = self.match_helper.query(rgb)
-            for query in queries:
-                mask = query["mask"].astype(np.float32) * 255
-                pcd = rgbd2pcd_mask(rgb, depth, mask, self.intrinsic_param)
-                grasps, grasp_info = self.grasp_helper.generate_grasp(pcd)
+            query = self.match_helper.query(rgb)[0]
+            # for query in queries:
+            mask = query["mask"].astype(np.float32) * 255
+            pcd = rgbd2pcd_mask(rgb, depth, mask, self.intrinsic_param)
+            grasps, grasp_info = self.grasp_helper.generate_grasp(pcd)
             
         if self.method == "dust3r":
             grasps, grasp_info = self.grasp_helper.generate_grasp(pcd)

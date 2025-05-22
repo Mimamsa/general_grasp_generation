@@ -16,7 +16,7 @@ if __name__ == "__main__":
     workflow_config = load_workflow_config()
 
     workflow_config.method = "dust3r"
-    glb_path = "Example/inputs/dust3r/scene/bottle.glb"
+    glb_path = "Example/inputs/dust3r/scene/usb_cable.glb"
     pcd = glb2pcd(glb_path)
 
     workflow = EfficiencyWorkflow(ma_config, gd_config, workflow_config)
