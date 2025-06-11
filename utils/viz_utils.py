@@ -13,10 +13,10 @@ def create_box(center, size, rot_mat, color):
     return box
 
 def draw_real_gripper(center, R, base_color_offset=0.0):
-    W = 0.050
-    D = 0.0455
-    T = 0.0082
-    H = 0.024
+    W = 0.050  # gripper width
+    D = 0.0455  # gripper depth
+    T = 0.0082  # gripper finger thickness
+    H = 0.024  # gripper finger width
     offset_y = W / 2
     offset_x = D / 2 + T / 2
 

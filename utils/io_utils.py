@@ -3,6 +3,7 @@ import numpy as np
 import argparse
 import yaml
 
+
 def glb2pcd(glb_path:str=None, scene_or_mesh=None) -> np.ndarray:
     """ Convert the data from .glb file to point-cloud with Shape (N, 6).
         Support the mesh input as well.

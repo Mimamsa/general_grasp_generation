@@ -3,6 +3,7 @@ checkpoints
 ./checkpoints/*
 *.pyc
 ./log
+logs/*
 *.so
 *.o
 .pt

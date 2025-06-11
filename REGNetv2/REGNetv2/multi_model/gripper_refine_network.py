@@ -168,7 +168,7 @@ class GripperRefineNetwork(nn.Module):
         pre_cls = torch.max(x_cls, dim=-1)[1]
         pre_select  = (pre_cls==1) & mask
         print("Average After Refine Number:\t", pre_select.sum().item()  // B)
-        print(pre_select.sum().item() )
+        #print(pre_select.sum().item() )
 
         g_stage1   = g_stage1.view(-1, self.grasp_channel)
         pre_center = x_reg[:, :3] * self.radius + g_stage1[:,:3]

@@ -74,7 +74,7 @@ class GraspDetector:
         self.eval_params    = [self.depth, self.width, self.table_height, self.gpu_num]
 
         self.detect_num = 0
-        print("Construct network successfully!")
+        print("[REGNetv2/REGNetv2/grasp_detect_from_file_multiobjects.py] Construct network successfully!")
 
 
     def _init_model(self):
@@ -211,7 +211,7 @@ class GraspDetector:
                 print(f"grasp_mat nums: {len(grasp_mat)}")
                 if len(grasp_mat) > 0:
                     score_vertical = np.asarray(self.com_z_score_torch(grasp_mat))
-                    print(f"score_antipodal: {score_antipodal.max()}, score_vertical: {score_vertical.max}")
+                    print(f"score_antipodal: {score_antipodal.max()}, score_vertical: {score_vertical.max()}")
 
                     
                     y1 = self._analytic(score_antipodal,score_vertical)
@@ -304,7 +304,7 @@ class GraspDetector:
         if self.gpu_num != -1:
             pc_torch = pc_torch.cuda()
         grasp_mat = self.eval_machine.eval_notruth_returngrasp(self.model, pc_torch, self.eval_params, self.gripper_params)
-        print(grasp_mat.shape)
+        print('grasp_mat shape: ', grasp_mat.shape)
 
         if len(grasp_mat) > 0:
             keep_indx = torch.arange(len(grasp_mat))
@@ -595,13 +595,13 @@ class GraspDetector:
             pc_xyz = np.matmul(self._local_to_global_transformation_mat(), \
                             np.c_[pc_xyz, np.ones([len(pc_xyz), 1])].T).T[:,:3]  
         pc = np.c_[pc_xyz, pc_color]
-        print(np.mean(pc, axis=0) )
-        print(pc[:,0].max(), pc[:,0].min())
-        print(pc[:,1].max(), pc[:,1].min())
-        print(pc[:,2].max(), pc[:,2].min())
+        #print(np.mean(pc, axis=0) )
+        #print(pc[:,0].max(), pc[:,0].min())
+        #print(pc[:,1].max(), pc[:,1].min())
+        #print(pc[:,2].max(), pc[:,2].min())
 
         if real_data:
-            print(self.bounds)
+            #print(self.bounds)
             pc = pc[(pc[:,0] < self.bounds[1]) & (pc[:,0] > self.bounds[0])]
             pc = pc[(pc[:,1] < self.bounds[3]) & (pc[:,1] > self.bounds[2])]
             pc = pc[pc[:,2] > self.table_height-0.1]
@@ -612,7 +612,7 @@ class GraspDetector:
         if self.config.camera == 'our':
             # 把z軸差距拉大，不使用的話效果差滿多的，算是一種前處理?增加Z軸差異用
             pc[:,2] = (pc[:,2]-np.mean(pc[:,2])-0.01)*self.config.z_rescale + np.mean(pc[:,2])+0.01
-        print(np.mean(pc, axis=0) )
+        #print(np.mean(pc, axis=0) )
 
         select_point_index = None
         if len(pc) >= self.all_points_num:

@@ -113,7 +113,7 @@ class GraspProposalNetwork(nn.Module):
         '''
         _, order = torch.sort(pre, dim=-1, descending=True)
         pre_index = torch.nonzero(order[:,0] == 1).view(-1)
-        print(len(pre_index))
+        print('[REGNetv2/REGNetv2/multi_model/proposal_network.py] Length of pre_index: ', len(pre_index))
 
         loss = torch.zeros(1).to(self.device)
         acc, recall = torch.zeros(1).to(self.device), torch.zeros(1).to(self.device)

@@ -50,7 +50,7 @@ def get_dataset(all_points_num, base_path, tag="train", seed=1, width=None, regr
                 data_seed = seed,
                 data_width = width)
 
-    print(len(dataset))
+    print('[REGNetv2/REGNetv2/utils.py] Length of dataset in get_dataset(): ', len(dataset))
     return dataset
 
 def get_dataset_multi(all_points_num, base_path, tag="train", seed=1):
@@ -59,7 +59,7 @@ def get_dataset_multi(all_points_num, base_path, tag="train", seed=1):
                 path = base_path,
                 tag = tag,
                 data_seed = seed)
-    print(len(dataset))
+    print('[REGNetv2/REGNetv2/utils.py] Length of dataset in get_dataset_multi(): ', len(dataset))
     return dataset
 
 def get_dataloader(dataset, batchsize, shuffle=True, num_workers=8, pin_memory=True):
@@ -738,7 +738,7 @@ class EvalNoTruth:
         # keep_idx: [B, K] bool
         # keep_num: [B] int
         keep_idx, keep_num = eval_test_batch(pc, select_grasp[...,:8], table_height, depths, width, gpu)
-        print("After collision check with view, there are {} grasps".format(keep_num))
+        print("[REGNetv2/REGNetv2/utils.py] After collision check with view, there are {} grasps".format(keep_num.cpu().numpy()[0]))
         return keep_idx
 
 ####___________________________test function_____________________________
