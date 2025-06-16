@@ -89,5 +89,5 @@ In the future, we can make it all in one.
 
 ## Information
 
-- Author: Yu-Hsien Chen (mike_chen@wistron.com)
+- Author: Yu-Hsien Mike Chen
 - Latest update: 2025/6/11
